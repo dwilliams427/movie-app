@@ -6,8 +6,8 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
-actor.save
+# actor = Actor.new({ first_name: "Benedict", last_name: "Cumberbatch", known_for: "Sherlock" })
+# actor.save
 
 # denzel = Actor.new({ first_name: "Denzel", last_name: "Washington", known_for: "Training Day" })
 # denzel.save
@@ -17,3 +17,9 @@ actor.save
 
 # chris = Actor.new({ first_name: "Chris", last_name: "Evans", known_for: "Captain America" })
 # chris.save
+
+rots = Movie.new({ title: "Star Wars: Revenge of the Sith", year: 2005, plot: "killing younglings and the greatest lightsaber duel ever put to film" })
+rots.save
+
+interstellar = Movie.new({ title: "Interstellar", year: 2014, plot: "Travel to new planets in another galaxy to find a new home for our species" })
+interstellar.save
