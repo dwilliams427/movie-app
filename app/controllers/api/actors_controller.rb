@@ -1,6 +1,7 @@
 class Api::ActorsController < ApplicationController
   def get_actor_by_id
-    @actor = Actor.find_by(id: 3)
+    input = params[:actor]
+    @actor = Actor.find_by(first_name: input)
     render "actor.json.jb"
   end
 end

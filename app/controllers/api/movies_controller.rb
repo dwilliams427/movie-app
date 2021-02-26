@@ -1,7 +1,4 @@
 class Api::MoviesController < ApplicationController
-  require "http"
-  # @response = HTTP.get("http://127.0.0.1:3000/api/get_movies")
-
   def get_all_movies
     @all_movies = Movie.select([:id, :title])
     render "all_movies.json.jb"
