@@ -13,8 +13,12 @@ class Api::ActorsController < ApplicationController
       gender: params[:gender],
       age: params[:age],
     )
-    @actor.save
-    render "show_actor.json.jb"
+    #happy/sad path
+    if @actor.save
+      render "show_actor.json.jb"             #happy path
+    else
+      render json: { errors: @actor.errors.full_messages }, status: 406                       #sad path
+    end
   end
 
   def update
@@ -27,8 +31,12 @@ class Api::ActorsController < ApplicationController
     @actor.gender = params[:gender] || @actor.gender
     @actor.age = params[:age] || @actor.age
 
-    @actor.save
-    render "show_actor.json.jb"
+    #happy/sad path
+    if @actor.save
+      render "show_actor.json.jb"             #happy path
+    else
+      render json: { errors: @actor.errors.full_messages }, status: 406                       #sad path
+    end
   end
 
   def destroy
