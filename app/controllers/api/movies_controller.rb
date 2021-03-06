@@ -1,4 +1,9 @@
 class Api::MoviesController < ApplicationController
+  def index
+    @movie = Movie.where(english: true)
+    render "index.json.jb"
+  end
+
   def show_movie
     movie_id = params[:id]
     @movie = Movie.find(movie_id)

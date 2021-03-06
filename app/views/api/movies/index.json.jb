@@ -1,0 +1,9 @@
+@movie.map do |movie|
+  {
+    title: movie.title,
+    year: movie.year,
+    plot: movie.plot,
+    director: movie.director,
+    english: movie.english,
+  }
+end

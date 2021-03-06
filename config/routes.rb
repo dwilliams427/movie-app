@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
     #actors routes
+
+    #RESTful index
+    get "/actors", controller: "actors", action: "index"
+
     #RESTful show
     get "/actors/:id", controller: "actors", action: "show_actor"
 
@@ -18,6 +22,9 @@ Rails.application.routes.draw do
     delete "/actors/:id", controller: "actors", action: "destroy"
 
     #movies routes
+    #RESTful index
+    get "/movies", controller: "movies", action: "index"
+
     #RESTful show
     get "/movies/:id", controller: "movies", action: "show_movie"
 

@@ -1,4 +1,9 @@
 class Api::ActorsController < ApplicationController
+  def index
+    @actor = Actor.all.order(age: :asc)
+    render "index.json.jb"
+  end
+
   def show_actor
     actor_id = params[:id]
     @actor = Actor.find(actor_id)
