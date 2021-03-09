@@ -17,6 +17,7 @@ class Api::ActorsController < ApplicationController
       known_for: params[:known_for],
       gender: params[:gender],
       age: params[:age],
+      movie_id: params[:movie_id],
     )
     #happy/sad path
     if @actor.save
@@ -34,6 +35,7 @@ class Api::ActorsController < ApplicationController
     @actor.last_name = params[:last_name] || @actor.last_name
     @actor.known_for = params[:known_for] || @actor.known_for
     @actor.gender = params[:gender] || @actor.gender
+    @actor.movie_id = params[:movie_id] || @actor.movie_id
     @actor.age = params[:age] || @actor.age
 
     #happy/sad path
