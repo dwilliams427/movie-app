@@ -4,8 +4,13 @@ Rails.application.routes.draw do
 
   # EXAMPLE JSON ROUTE WITH API NAMESPACE
   namespace :api do
-    #actors routes
+    #user
+    post "/users", controller: "users", action: "create"
 
+    #sessions
+    post "/sessions", controller: "sessions", action: "create"
+
+    #actors routes
     #RESTful index
     get "/actors", controller: "actors", action: "index"
 
