@@ -18,8 +18,20 @@
 # chris = Actor.new({ first_name: "Chris", last_name: "Evans", known_for: "Captain America" })
 # chris.save
 
-rots = Movie.new({ title: "Star Wars: Revenge of the Sith", year: 2005, plot: "killing younglings and the greatest lightsaber duel ever put to film" })
-rots.save
+# rots = Movie.new({ title: "Star Wars: Revenge of the Sith", year: 2005, plot: "killing younglings and the greatest lightsaber duel ever put to film" })
+# rots.save
 
-interstellar = Movie.new({ title: "Interstellar", year: 2014, plot: "Travel to new planets in another galaxy to find a new home for our species" })
-interstellar.save
+# interstellar = Movie.new({ title: "Interstellar", year: 2014, plot: "Travel to new planets in another galaxy to find a new home for our species" })
+# interstellar.save
+
+#Genres
+# Genre.create(name: "action")
+# Genre.create(name: "drama")
+# Genre.create(name: "comedy")
+
+#MovieGenres
+# MovieGenre.create(genre_id: 1, movie_id: 5)
+# MovieGenre.create(genre_id: 1, movie_id: 1)
+# MovieGenre.create(genre_id: 1, movie_id: 3)
+# MovieGenre.create(genre_id: 2, movie_id: 6)
+# MovieGenre.create(genre_id: 3, movie_id: 5)

@@ -1,6 +1,10 @@
 class Api::MoviesController < ApplicationController
   def index
-    @movie = Movie.where(english: true)
+    @movie = Movie.all
+    if params[:name]
+      genre = Genre.find_by(name: params[:name])
+      @movie = genre.movies
+    end
     render "index.json.jb"
   end
 

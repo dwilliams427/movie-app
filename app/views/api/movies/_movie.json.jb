@@ -1,5 +1,6 @@
 {
-  title: movie.title
+  title: movie.title,
   year: movie.year,
   plot: movie.plot,
+  genres: movie.genres,
 }
