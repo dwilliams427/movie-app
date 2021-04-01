@@ -34,7 +34,7 @@ Rails.application.routes.draw do
     get "/movies", controller: "movies", action: "index"
 
     #RESTful show
-    get "/movies/:id", controller: "movies", action: "show_movie"
+    get "/movies/:id", controller: "movies", action: "show"
 
     #RETSful create
     post "/movies", controller: "movies", action: "create"

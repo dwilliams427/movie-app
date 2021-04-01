@@ -1,17 +1,16 @@
 class Api::MoviesController < ApplicationController
   def index
     @movie = Movie.all
-    if params[:name]
-      genre = Genre.find_by(name: params[:name])
-      @movie = genre.movies
-    end
+    # if params[:name]
+    #   genre = Genre.find_by(name: params[:name])
+    #   @movie = genre.movies
+    # end
     render "index.json.jb"
   end
 
-  def show_movie
-    movie_id = params[:id]
-    @movie = Movie.find(movie_id)
-    render "show_movie.json.jb"
+  def show
+    @movie = Movie.find_by(id: params[:id])
+    render "show.json.jb"
   end
 
   def create
@@ -31,8 +30,7 @@ class Api::MoviesController < ApplicationController
   end
 
   def update
-    movie_title = params[:id]
-    @movie = Movie.find_by(id: movie_title)
+    @movie = Movie.find_by(id: params[:id])
 
     @movie.title = params[:title] || @movie.title
     @movie.year = params[:year] || @movie.year
@@ -49,10 +47,12 @@ class Api::MoviesController < ApplicationController
   end
 
   def destroy
-    movie_id = params[:id]
-    @movie = Movie.find_by(id: movie_id)
+    @movie = Movie.find_by(id: params[:id])
 
-    @movie.destroy
-    render json: { message: "deleted movie" }
+    if @movie.destroy
+      render json: { message: "deleted movie" }
+    else
+      render json: { errors: @movie.errors.full_messages }, status: 406                       #sad path
+    end
   end
 end
