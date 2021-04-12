@@ -20,6 +20,7 @@ class Api::MoviesController < ApplicationController
       plot: params[:plot],
       director: params[:director],
       english: params[:english],
+      image_url: params[:image_url],
     )
     #happy/sad path
     if @movie.save
@@ -37,6 +38,7 @@ class Api::MoviesController < ApplicationController
     @movie.plot = params[:plot] || @movie.plot
     @movie.director = params[:director] || @movie.director
     @movie.english = params[:english] || @movie.english
+    @movie.image_url = params[:image_url] || @movie.image_url
 
     #happy/sad path
     if @movie.save
